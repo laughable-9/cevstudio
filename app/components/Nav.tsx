@@ -8,10 +8,10 @@ export default function Nav() {
           <Image
             src="/logo.png"
             alt="cev.studio"
-            width={200}
-            height={48}
+            width={280}
+            height={64}
             priority
-            className="h-10 w-auto"
+            className="h-14 w-auto"
           />
         </a>
         <a

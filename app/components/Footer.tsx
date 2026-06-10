@@ -7,9 +7,9 @@ export default function Footer() {
         <Image
           src="/logo.png"
           alt="cev.studio"
-          width={200}
-          height={48}
-          className="h-10 w-auto"
+          width={280}
+          height={64}
+          className="h-14 w-auto"
         />
         <p className="font-mono text-xs uppercase tracking-[0.18em] text-muted">
           © 2026
