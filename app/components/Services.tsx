@@ -43,11 +43,13 @@ export default function Services() {
   const sectionRef = useRef<HTMLElement>(null);
   const [openIndex, setOpenIndex] = useState<number>(-1);
 
+  // Open the first service once the section scrolls into view; the rest are
+  // opened by clicking their header.
   useGSAP(
     () => {
       ScrollTrigger.create({
         trigger: sectionRef.current,
-        start: "top 65%",
+        start: "top 70%",
         once: true,
         onEnter: () => setOpenIndex((i) => (i === -1 ? 0 : i)),
       });
