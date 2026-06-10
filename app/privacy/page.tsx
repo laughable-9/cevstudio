@@ -83,7 +83,7 @@ export default function PrivacyPage() {
           <p className="mt-14 border-t border-border pt-8 text-base leading-relaxed text-muted">
             Questions, or a deletion request? Write to us through the{" "}
             <Link
-              href="/"
+              href="/#contact"
               className="font-medium text-ink underline decoration-accent decoration-2 underline-offset-4 transition-colors hover:text-accent"
             >
               contact form

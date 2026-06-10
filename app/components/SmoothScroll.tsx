@@ -18,11 +18,19 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
         "(prefers-reduced-motion: reduce)"
       ).matches;
 
-      ScrollSmoother.create({
+      const smoother = ScrollSmoother.create({
         wrapper: wrapper.current!,
         content: content.current!,
         smooth: reduceMotion ? 0 : 1.2,
       });
+
+      // Honor a hash on load (e.g. /#contact from the privacy page). Native
+      // anchor scrolling doesn't work once ScrollSmoother transforms the
+      // content, so jump to it manually, clearing the fixed nav.
+      const hash = window.location.hash;
+      if (hash.length > 1 && document.querySelector(hash)) {
+        requestAnimationFrame(() => smoother.scrollTo(hash, false, "top 96px"));
+      }
     },
     { scope: wrapper }
   );
