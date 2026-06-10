@@ -41,7 +41,7 @@ export default function ContactForm() {
     >
       <h2
         id="contact-heading"
-        className="text-2xl font-bold leading-[1.05] tracking-tight md:text-3xl"
+        className="text-center text-2xl font-bold leading-[1.05] tracking-tight md:text-left md:text-3xl"
       >
         Tell us what you&rsquo;re building.
       </h2>
@@ -86,7 +86,7 @@ export default function ContactForm() {
             required
           />
 
-          <div className="mt-2 flex items-center gap-4">
+          <div className="mt-2 flex items-center justify-center gap-4 md:justify-start">
             <button
               type="submit"
               disabled={status === "sending"}
@@ -142,11 +142,16 @@ function Field({
           id={id}
           name={id}
           value={value}
-          onChange={(e) => onChange(e.target.value)}
+          onChange={(e) => {
+            onChange(e.target.value);
+            const el = e.currentTarget;
+            el.style.height = "auto";
+            el.style.height = `${el.scrollHeight}px`;
+          }}
           placeholder={placeholder}
           required={required}
           rows={4}
-          className={inputClass}
+          className={`${inputClass} min-h-24 resize-none overflow-hidden`}
         />
       ) : (
         <input
