@@ -15,7 +15,7 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "cev.studio — digital agency",
+  title: "cev.studio",
   description:
     "cev.studio designs and builds web, mobile, brand, and 3D work for teams that want the thing they actually need.",
 };
