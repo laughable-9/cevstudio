@@ -265,13 +265,13 @@ function BrandVisual() {
         studio
       </span>
       <div className="anim-bar h-0.5 w-full origin-left bg-accent" />
-      <div className="flex items-end justify-between gap-6">
+      <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <div className="flex items-baseline gap-4 text-ink">
           <span className="text-3xl font-normal md:text-4xl">Aa</span>
           <span className="text-3xl font-medium md:text-4xl">Aa</span>
           <span className="text-3xl font-bold md:text-4xl">Aa</span>
         </div>
-        <div className="flex gap-3">
+        <div className="flex justify-between gap-3 md:justify-start">
           {swatches.map((sw, i) => (
             <div key={sw.hex} className="flex flex-col items-center gap-1.5">
               <span
