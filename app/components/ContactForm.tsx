@@ -6,31 +6,47 @@ export default function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
+    "idle"
+  );
+  const [errorText, setErrorText] = useState("");
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // TODO: wire to Supabase
-    setSent(true);
+    setStatus("sending");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        setErrorText(data?.error ?? "Something went wrong. Please try again.");
+        setStatus("error");
+        return;
+      }
+      setStatus("sent");
+    } catch {
+      setErrorText("Something went wrong. Please try again.");
+      setStatus("error");
+    }
   }
 
   return (
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="border border-border bg-surface p-6 md:p-10"
+      className="border border-border bg-surface p-6 pb-28 [mask-image:linear-gradient(to_bottom,black_calc(100%_-_7rem),transparent)] md:p-10 md:pb-32"
     >
-      <p className="font-mono text-xs uppercase tracking-[0.18em] text-muted">
-        Contact
-      </p>
       <h2
         id="contact-heading"
-        className="mt-3 text-2xl font-bold leading-[1.05] tracking-tight md:text-3xl"
+        className="text-2xl font-bold leading-[1.05] tracking-tight md:text-3xl"
       >
         Tell us what you&rsquo;re building.
       </h2>
 
-      {sent ? (
+      {status === "sent" ? (
         <div
           role="status"
           aria-live="polite"
@@ -70,12 +86,20 @@ export default function ContactForm() {
             required
           />
 
-          <button
-            type="submit"
-            className="mt-2 self-start bg-accent px-8 py-4 font-mono text-xs uppercase tracking-[0.2em] text-bg transition-colors hover:bg-accent-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
-          >
-            Send it.
-          </button>
+          <div className="mt-2 flex items-center gap-4">
+            <button
+              type="submit"
+              disabled={status === "sending"}
+              className="self-start rounded-full bg-accent px-8 py-3.5 text-sm font-semibold text-bg transition-colors hover:bg-accent-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 focus-visible:ring-offset-surface disabled:cursor-wait disabled:opacity-60"
+            >
+              {status === "sending" ? "Sending…" : "Send message"}
+            </button>
+            {status === "error" && (
+              <p role="alert" className="text-sm text-accent-dark">
+                {errorText}
+              </p>
+            )}
+          </div>
         </form>
       )}
     </section>
@@ -110,10 +134,7 @@ function Field({
 }: FieldProps) {
   return (
     <div className="flex flex-col gap-2">
-      <label
-        htmlFor={id}
-        className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted"
-      >
+      <label htmlFor={id} className="text-sm font-medium text-muted">
         {label}
       </label>
       {multiline ? (
