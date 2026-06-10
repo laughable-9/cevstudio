@@ -52,8 +52,7 @@ export default function ContactForm() {
           aria-live="polite"
           className="mt-8 border-t border-border pt-8"
         >
-          <span className="inline-block h-2 w-2 rounded-full bg-accent" />
-          <p className="mt-4 text-lg leading-tight">
+          <p className="text-lg leading-tight">
             Got it. We&rsquo;ll be in touch.
           </p>
         </div>
@@ -86,7 +85,16 @@ export default function ContactForm() {
             required
           />
 
-          <div className="mt-2 flex items-center justify-center gap-4 md:justify-start">
+          {status === "error" && (
+            <p
+              role="alert"
+              className="border-l-2 border-accent bg-bg px-4 py-3 text-sm leading-relaxed text-accent-dark"
+            >
+              {errorText}
+            </p>
+          )}
+
+          <div className="mt-2 flex justify-center md:justify-start">
             <button
               type="submit"
               disabled={status === "sending"}
@@ -94,11 +102,6 @@ export default function ContactForm() {
             >
               {status === "sending" ? "Sending…" : "Send message"}
             </button>
-            {status === "error" && (
-              <p role="alert" className="text-sm text-accent-dark">
-                {errorText}
-              </p>
-            )}
           </div>
         </form>
       )}
