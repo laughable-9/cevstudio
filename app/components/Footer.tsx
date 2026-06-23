@@ -8,7 +8,7 @@ export default function Footer() {
         <Image
           src="/final-logo.svg"
           alt="cev.studio"
-          width={1500}
+          width={1400}
           height={359}
           className="h-14 w-auto"
         />

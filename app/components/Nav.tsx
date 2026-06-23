@@ -35,13 +35,13 @@ export default function Nav() {
           href="#top"
           aria-label="cev.studio — back to top"
           onClick={(e) => goTo(e, "#top")}
-          className="mr-4 flex items-center md:mr-6"
+          className="mr-1 flex items-center md:mr-2"
         >
           {/* Full wordmark on desktop, compact c-dot mark on mobile */}
           <Image
             src="/final-logo.svg"
             alt="cev.studio"
-            width={1500}
+            width={1400}
             height={359}
             priority
             className="hidden h-[22px] w-auto md:block"

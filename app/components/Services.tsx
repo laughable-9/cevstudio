@@ -124,7 +124,7 @@ export default function Services() {
                             <span key={tag} className="inline-block">
                               {tag}
                               {j < s.tags.length - 1 && (
-                                <span aria-hidden className="mx-2.5 text-accent">
+                                <span aria-hidden className="mx-2.5 text-olive">
                                   •
                                 </span>
                               )}

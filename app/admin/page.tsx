@@ -101,7 +101,7 @@ export default async function AdminPage({
             <Image
               src="/final-logo.svg"
               alt="cev.studio"
-              width={1500}
+              width={1400}
               height={359}
               priority
               className="h-[18px] w-auto"
