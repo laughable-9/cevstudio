@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState } from "react";
-import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -260,13 +259,10 @@ const swatches = [
 function BrandVisual() {
   return (
     <div aria-hidden className="flex w-full max-w-md flex-col gap-6 bg-surface/80 p-4">
-      <Image
-        src="/final-logo.svg"
-        alt=""
-        width={1300}
-        height={195}
-        className="h-6 w-auto md:h-8"
-      />
+      <span className="text-2xl font-bold tracking-tight md:text-3xl">
+        <span className="text-accent">cev.</span>
+        <span className="font-medium text-ink">&lt;studio/&gt;</span>
+      </span>
       <div className="anim-bar h-0.5 w-full origin-left bg-accent" />
       <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <div className="flex items-baseline gap-4 text-ink">
