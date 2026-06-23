@@ -8,9 +8,9 @@ export default function Footer() {
         <Image
           src="/final-logo.svg"
           alt="cev.studio"
-          width={1400}
-          height={359}
-          className="h-14 w-auto"
+          width={1300}
+          height={195}
+          className="h-8 w-auto"
         />
         <div className="flex items-center gap-6">
           <Link

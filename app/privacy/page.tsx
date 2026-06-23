@@ -41,10 +41,10 @@ export default function PrivacyPage() {
             <Image
               src="/final-logo.svg"
               alt="cev.studio"
-              width={1400}
-              height={359}
+              width={1300}
+              height={195}
               priority
-              className="h-12 w-auto"
+              className="h-7 w-auto"
             />
           </Link>
         </div>

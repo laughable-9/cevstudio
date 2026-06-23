@@ -41,8 +41,8 @@ export default function Nav() {
           <Image
             src="/final-logo.svg"
             alt="cev.studio"
-            width={1400}
-            height={359}
+            width={1300}
+            height={195}
             priority
             className="hidden h-[22px] w-auto md:block"
           />
