@@ -39,10 +39,10 @@ export default function PrivacyPage() {
         <div className="mx-auto max-w-2xl">
           <Link href="/" aria-label="cev.studio home" className="inline-flex">
             <Image
-              src="/logo.png"
+              src="/final-logo.svg"
               alt="cev.studio"
-              width={280}
-              height={64}
+              width={1500}
+              height={359}
               priority
               className="h-12 w-auto"
             />

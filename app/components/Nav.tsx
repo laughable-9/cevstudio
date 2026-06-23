@@ -30,7 +30,7 @@ export default function Nav() {
         hidden ? "-translate-y-24 opacity-0" : "translate-y-0 opacity-100"
       }`}
     >
-      <nav className="flex items-center gap-2 rounded-full border border-border bg-surface py-1.5 pl-4 pr-5 shadow-[0_6px_20px_-8px_rgba(10,10,10,0.12)]">
+      <nav className="flex items-center gap-2 rounded-full border border-border bg-surface py-1.5 pl-4 pr-5 shadow-[0_6px_20px_-8px_rgba(0,0,0,0.5)]">
         <a
           href="#top"
           aria-label="cev.studio — back to top"
@@ -39,16 +39,16 @@ export default function Nav() {
         >
           {/* Full wordmark on desktop, compact c-dot mark on mobile */}
           <Image
-            src="/logo-nav.png"
+            src="/final-logo.svg"
             alt="cev.studio"
-            width={2368}
-            height={388}
+            width={1500}
+            height={359}
             priority
-            className="hidden h-[18px] w-auto -translate-y-[1.5px] md:block"
+            className="hidden h-[22px] w-auto md:block"
           />
           <span
             aria-hidden
-            className="h-5 w-5 bg-[url('/favicon.svg')] bg-contain bg-center bg-no-repeat md:hidden"
+            className="h-5 w-5 bg-[url('/favicon-final.svg')] bg-contain bg-center bg-no-repeat md:hidden"
           />
         </a>
         <a

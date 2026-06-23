@@ -12,7 +12,8 @@ export default function Hero() {
             letterSpacing: "-0.03em",
           }}
         >
-          We build the thing you actually need.
+          We build the thing you{" "}
+          <span className="lime-gradient">actually need</span>.
         </h1>
         <p className="mt-6 max-w-md text-base leading-snug text-muted md:text-lg">
           A studio for web, mobile, brand, and 3D.

@@ -6,10 +6,10 @@ export default function Footer() {
     <footer>
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-12 md:px-10">
         <Image
-          src="/logo.png"
+          src="/final-logo.svg"
           alt="cev.studio"
-          width={280}
-          height={64}
+          width={1500}
+          height={359}
           className="h-14 w-auto"
         />
         <div className="flex items-center gap-6">

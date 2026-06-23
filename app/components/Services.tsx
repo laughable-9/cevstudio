@@ -250,10 +250,10 @@ function MobileVisual() {
 }
 
 const swatches = [
-  { className: "bg-ink", hex: "#0A0A0A" },
-  { className: "bg-accent", hex: "#D85A30" },
-  { className: "bg-muted", hex: "#6B6B68" },
-  { className: "border border-border bg-bg", hex: "#FAFAF8" },
+  { className: "bg-accent", hex: "#B3E611" },
+  { className: "bg-olive", hex: "#333F00" },
+  { className: "bg-ink", hex: "#F5F5F3" },
+  { className: "border border-border bg-bg", hex: "#1D1D1D" },
 ];
 
 function BrandVisual() {

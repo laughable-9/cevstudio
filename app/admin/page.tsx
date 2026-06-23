@@ -99,10 +99,10 @@ export default async function AdminPage({
         <div className="mx-auto max-w-3xl">
           <Link href="/" aria-label="cev.studio home" className="inline-flex">
             <Image
-              src="/logo-nav.png"
+              src="/final-logo.svg"
               alt="cev.studio"
-              width={2368}
-              height={388}
+              width={1500}
+              height={359}
               priority
               className="h-[18px] w-auto"
             />

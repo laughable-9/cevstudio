@@ -21,7 +21,7 @@ export default function ClosingCta() {
               letterSpacing: "-0.03em",
             }}
           >
-            Have a project in mind?
+            Have a <span className="lime-gradient">project</span> in mind?
           </span>
           <span className="flex items-center gap-3 text-base font-medium text-muted transition-colors group-hover:text-accent md:text-lg">
             Get in touch
